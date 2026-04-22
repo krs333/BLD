@@ -23,18 +23,7 @@ const pool = new Pool({
 });
 
 // ── Telegram Bot ────────────────────────────
-const { SocksProxyAgent } = require('socks-proxy-agent');
-
-// Создаем агент для SOCKS5 прокси (порт 10808)
-const agent = new SocksProxyAgent('socks5://127.0.0.1:10808');
-
-const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, { 
-  polling: true,
-  request: {
-    agent: agent,
-    timeout: 60000
-  }
-});
+const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, { polling: true });
 const ADMIN_CHAT_ID = process.env.ADMIN_CHAT_ID;
 
 // ── DB Init ─────────────────────────────────
