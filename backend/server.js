@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 
 // ── Middleware ──────────────────────────────
 app.use(cors({
-  origin: process.env.FRONTEND_URL || '*'
+  origin: process.env.FRONTEND_URL || 'https://artbld.netlify.app/'
 }));
 app.use(express.json());
 
