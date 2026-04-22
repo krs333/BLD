@@ -27,617 +27,366 @@
     overflow-x: hidden;
   }
 
-  /* CURSOR */
+  /* ─── CURSOR ─── */
   .cursor {
     width: 8px; height: 8px;
-    background: var(--red);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-    transition: transform 0.1s;
+    background: var(--red); border-radius: 50%;
+    position: fixed; pointer-events: none; z-index: 9999;
+    transform: translate(-50%, -50%); transition: transform 0.1s;
   }
   .cursor-ring {
     width: 32px; height: 32px;
-    border: 1.5px solid rgba(73,17,28,0.4);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9998;
-    transform: translate(-50%, -50%);
-    transition: all 0.14s ease;
+    border: 1.5px solid rgba(73,17,28,0.4); border-radius: 50%;
+    position: fixed; pointer-events: none; z-index: 9998;
+    transform: translate(-50%, -50%); transition: all 0.14s ease;
   }
   @media (hover: none) { .cursor, .cursor-ring { display: none; } }
 
-  /* HEADER */
+  /* ─── HEADER ─── */
   header {
     background: var(--black);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    position: sticky; top: 0; z-index: 100;
   }
-
   .header-top {
     padding: 20px 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: flex; align-items: center; justify-content: space-between;
     background: linear-gradient(135deg, #0A0908 0%, #49111C 50%, #0A0908 100%);
     background-size: 200% 200%;
     animation: gradShift 8s ease infinite;
     border-bottom: 1px solid rgba(242,244,243,0.08);
   }
-
   @keyframes gradShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
   }
-
   .logo {
-    font-size: 32px;
-    font-weight: 700;
-    letter-spacing: 0.35em;
-    color: var(--white);
-    text-decoration: none;
-    cursor: pointer;
-    user-select: none;
+    font-size: 32px; font-weight: 700; letter-spacing: 0.35em;
+    color: var(--white); text-decoration: none;
+    cursor: pointer; user-select: none;
   }
-
   .header-tagline {
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: rgba(242,244,243,0.4);
+    font-size: 11px; letter-spacing: 0.25em;
+    text-transform: uppercase; color: rgba(242,244,243,0.4);
   }
 
-  /* NAV TABS */
-  .nav-tabs {
-    display: flex;
-    background: var(--black);
-  }
-
+  /* ─── NAV ─── */
+  .nav-tabs { display: flex; background: var(--black); }
   .nav-tab {
-    flex: 1;
-    padding: 14px 24px;
+    flex: 1; padding: 14px 24px;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(242,244,243,0.45);
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid transparent;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    text-align: center;
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(242,244,243,0.45); background: transparent;
+    border: none; border-bottom: 2px solid transparent;
+    cursor: pointer; transition: all 0.2s ease; text-align: center;
   }
+  .nav-tab:hover { color: var(--white); background: rgba(242,244,243,0.04); }
+  .nav-tab.active { color: var(--white); border-bottom-color: var(--red); background: rgba(73,17,28,0.15); }
 
-  .nav-tab:hover {
-    color: var(--white);
-    background: rgba(242,244,243,0.04);
-  }
-
-  .nav-tab.active {
-    color: var(--white);
-    border-bottom-color: var(--red);
-    background: rgba(73,17,28,0.15);
-  }
-
-  /* SECTIONS */
+  /* ─── SECTIONS ─── */
   .section { display: none; }
   .section.active { display: block; }
 
-  /* CONTENT WRAPPER */
-  .container { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
-
-  /* PAGE HERO */
+  /* ─── PAGE HERO ─── */
   .page-hero {
     padding: 64px 48px 48px;
     border-bottom: 1px solid var(--border);
     background: var(--white);
   }
   .page-tag {
-    font-size: 10px;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 12px;
+    font-size: 10px; letter-spacing: 0.4em;
+    text-transform: uppercase; color: var(--red); margin-bottom: 12px;
   }
   .page-title {
     font-size: clamp(36px, 5vw, 60px);
-    font-weight: 700;
-    letter-spacing: -0.025em;
-    line-height: 1.05;
-    color: var(--black);
+    font-weight: 700; letter-spacing: -0.025em; line-height: 1.05;
   }
 
-  /* MASTER CARD */
-  .master-section {
-    padding: 56px 48px 0;
-  }
+  /* ─── MASTER ─── */
+  .master-section { padding: 56px 48px 0; }
   .section-label {
-    font-size: 10px;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 32px;
-    padding-bottom: 12px;
+    font-size: 10px; letter-spacing: 0.35em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 32px; padding-bottom: 12px;
     border-bottom: 1px solid var(--border);
   }
-
   .master-card {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    padding: 32px;
-    background: var(--light);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--red);
+    display: flex; align-items: center; gap: 28px;
+    padding: 32px; background: var(--light);
+    border: 1px solid var(--border); border-left: 3px solid var(--red);
     max-width: 480px;
   }
-
   .master-avatar {
-    width: 80px; height: 80px;
-    border-radius: 50%;
-    border: 2px solid var(--red);
-    background: var(--white);
-    object-fit: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--red);
-    flex-shrink: 0;
-    overflow: hidden;
+    width: 80px; height: 80px; border-radius: 50%;
+    border: 2px solid var(--red); background: var(--white);
+    object-fit: cover; display: flex;
+    align-items: center; justify-content: center;
+    font-size: 28px; font-weight: 700; color: var(--red);
+    flex-shrink: 0; overflow: hidden;
+    cursor: pointer; transition: opacity 0.2s, box-shadow 0.2s;
   }
-  .master-avatar img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-  }
+  .master-avatar:hover { opacity: 0.85; box-shadow: 0 0 0 3px rgba(73,17,28,0.25); }
+  .master-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+  .master-name { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+  .master-exp { font-size: 12px; color: var(--muted); letter-spacing: 0.05em; }
+  .master-exp strong { color: var(--red); font-weight: 600; }
 
-  .master-info {}
-  .master-name {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 6px;
-  }
-  .master-exp {
-    font-size: 12px;
-    color: var(--muted);
-    letter-spacing: 0.05em;
-  }
-  .master-exp strong {
-    color: var(--red);
-    font-weight: 600;
-  }
-
-  /* PIERCING GRID */
-  .piercing-section {
-    padding: 48px 48px 64px;
-  }
-
+  /* ─── PIERCING GRID ─── */
+  .piercing-section { padding: 48px 48px 64px; }
   .piercing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    margin-top: 32px;
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border); margin-top: 32px;
   }
-
-  .piercing-card {
-    background: var(--white);
-    display: flex;
-    flex-direction: column;
-  }
-
+  .piercing-card { background: var(--white); display: flex; flex-direction: column; }
   .piercing-img {
-    aspect-ratio: 1;
-    background: var(--light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
+    aspect-ratio: 1; background: var(--light);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; position: relative; cursor: pointer;
   }
   .piercing-img img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
+    width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;
   }
-  .piercing-img .placeholder-icon {
-    font-size: 52px;
-    opacity: 0.25;
-  }
+  .piercing-img .placeholder-icon { font-size: 52px; opacity: 0.25; }
   .piercing-card:hover .piercing-img img { transform: scale(1.04); }
 
+  /* zoom overlay on piercing images */
+  .piercing-img .zoom-hint {
+    position: absolute; inset: 0;
+    background: rgba(73,17,28,0); display: flex;
+    align-items: center; justify-content: center;
+    opacity: 0; transition: all 0.25s;
+    font-size: 28px; color: white; pointer-events: none;
+  }
+  .piercing-img:hover .zoom-hint { opacity: 1; background: rgba(73,17,28,0.35); }
+
   .piercing-body {
-    padding: 20px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    padding: 20px; flex: 1;
+    display: flex; flex-direction: column; gap: 12px;
   }
-  .piercing-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .piercing-name {
-    font-size: 15px;
-    font-weight: 600;
-  }
-  .piercing-price {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--red);
-  }
+  .piercing-row { display: flex; align-items: center; justify-content: space-between; }
+  .piercing-name { font-size: 15px; font-weight: 600; }
+  .piercing-price { font-size: 16px; font-weight: 700; color: var(--red); }
 
-  /* TATTOO GRID */
-  .tattoo-section {
-    padding: 48px 48px 0;
-  }
-
+  /* ─── TATTOO GRID ─── */
+  .tattoo-section { padding: 48px 48px 0; }
   .tattoo-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    margin-top: 32px;
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border); margin-top: 32px;
   }
-
   .tattoo-item {
-    aspect-ratio: 3/4;
-    background: var(--light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    cursor: pointer;
-    position: relative;
+    aspect-ratio: 3/4; background: var(--light);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; cursor: pointer; position: relative;
   }
   .tattoo-item img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
+    width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;
   }
-  .tattoo-item .placeholder-icon {
-    font-size: 48px;
-    opacity: 0.2;
-  }
+  .tattoo-item .placeholder-icon { font-size: 48px; opacity: 0.2; }
   .tattoo-item:hover img { transform: scale(1.05); }
   .tattoo-item:hover .placeholder-icon { opacity: 0.35; }
+  .tattoo-item .zoom-hint {
+    position: absolute; inset: 0;
+    background: rgba(73,17,28,0); display: flex;
+    align-items: center; justify-content: center;
+    opacity: 0; transition: all 0.25s;
+    font-size: 28px; color: white; pointer-events: none;
+  }
+  .tattoo-item:hover .zoom-hint { opacity: 1; background: rgba(73,17,28,0.35); }
 
+  /* ─── CONSULT BLOCK ─── */
   .consult-block {
-    margin: 56px 48px 64px;
-    padding: 56px 48px;
-    background: var(--black);
-    color: var(--white);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 32px;
+    margin: 56px 48px 64px; padding: 56px 48px;
+    background: var(--black); color: var(--white);
+    display: flex; align-items: center; justify-content: space-between; gap: 32px;
   }
-  .consult-text h3 {
-    font-size: 26px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    letter-spacing: -0.02em;
-  }
-  .consult-text p {
-    font-size: 14px;
-    color: rgba(242,244,243,0.5);
-    line-height: 1.6;
-  }
+  .consult-text h3 { font-size: 26px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; }
+  .consult-text p { font-size: 14px; color: rgba(242,244,243,0.5); line-height: 1.6; }
 
-  /* ABOUT */
+  /* ─── ABOUT ─── */
   .about-section {
     padding: 56px 48px 64px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
   }
-
-  .about-desc h2 {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    margin-bottom: 20px;
-    line-height: 1.2;
-  }
-  .about-desc p {
-    font-size: 15px;
-    color: #444;
-    line-height: 1.8;
-    margin-bottom: 14px;
-  }
-
-  .about-stats {
-    display: flex;
-    gap: 36px;
-    margin-top: 40px;
-    padding-top: 32px;
-    border-top: 1px solid var(--border);
-  }
-  .stat-num {
-    font-size: 44px;
-    font-weight: 700;
-    color: var(--red);
-    line-height: 1;
-    letter-spacing: -0.03em;
-  }
-  .stat-label {
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 4px;
-  }
-
-  .about-map-col {}
-  .about-map-col h3 {
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    letter-spacing: -0.01em;
-  }
-
-  .map-frame {
-    width: 100%;
-    border: 1px solid var(--border);
-    height: 340px;
-    overflow: hidden;
-    display: block;
-  }
-  .map-frame iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-
+  .about-desc h2 { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 20px; line-height: 1.2; }
+  .about-desc p { font-size: 15px; color: #444; line-height: 1.8; margin-bottom: 14px; }
+  .about-stats { display: flex; gap: 36px; margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border); }
+  .stat-num { font-size: 44px; font-weight: 700; color: var(--red); line-height: 1; letter-spacing: -0.03em; }
+  .stat-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+  .about-map-col h3 { font-size: 15px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.01em; }
+  .map-frame { width: 100%; border: 1px solid var(--border); height: 340px; overflow: hidden; display: block; }
+  .map-frame iframe { width: 100%; height: 100%; border: none; }
   .address-block {
-    margin-top: 20px;
-    padding: 20px 24px;
-    background: var(--light);
-    border-left: 3px solid var(--red);
-    font-size: 14px;
-    line-height: 1.7;
-    color: #333;
+    margin-top: 20px; padding: 20px 24px;
+    background: var(--light); border-left: 3px solid var(--red);
+    font-size: 14px; line-height: 1.7; color: #333;
   }
   .address-block strong { color: var(--black); }
 
-  /* BUTTONS */
+  /* ─── BUTTONS ─── */
   .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    display: inline-flex; align-items: center; gap: 8px;
     padding: 13px 28px;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    cursor: pointer;
-    border: none;
-    transition: all 0.22s ease;
-    text-decoration: none;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    cursor: pointer; border: none; transition: all 0.22s ease; text-decoration: none;
   }
-  .btn-primary {
-    background: var(--red);
-    color: var(--white);
-  }
-  .btn-primary:hover {
-    background: var(--red-h);
-    transform: translateY(-1px);
-    box-shadow: 0 8px 24px rgba(73,17,28,0.3);
-  }
-  .btn-outline {
-    background: transparent;
-    color: var(--white);
-    border: 1px solid rgba(242,244,243,0.3);
-  }
-  .btn-outline:hover {
-    border-color: var(--white);
-    background: rgba(242,244,243,0.08);
-  }
+  .btn-primary { background: var(--red); color: var(--white); }
+  .btn-primary:hover { background: var(--red-h); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(73,17,28,0.3); }
+  .btn-outline { background: transparent; color: var(--white); border: 1px solid rgba(242,244,243,0.3); }
+  .btn-outline:hover { border-color: var(--white); background: rgba(242,244,243,0.08); }
   .btn-sm { padding: 10px 20px; font-size: 10px; }
   .btn-full { width: 100%; justify-content: center; }
 
-  /* MODAL */
+  /* ─── MODAL ─── */
   .modal-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(10,9,8,0.75);
-    backdrop-filter: blur(6px);
-    z-index: 500;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
+    display: none; position: fixed; inset: 0;
+    background: rgba(10,9,8,0.75); backdrop-filter: blur(6px);
+    z-index: 600; align-items: center; justify-content: center; padding: 24px;
   }
   .modal-overlay.open { display: flex; animation: fadeIn 0.2s ease; }
-
   .modal {
-    background: var(--white);
-    width: 100%;
-    max-width: 440px;
-    border-top: 3px solid var(--red);
-    animation: slideUp 0.25s ease;
-    overflow: hidden;
-    position: relative;
-    max-height: 90vh;
-    overflow-y: auto;
+    background: var(--white); width: 100%; max-width: 440px;
+    border-top: 3px solid var(--red); animation: slideUp 0.25s ease;
+    overflow: hidden; position: relative; max-height: 90vh; overflow-y: auto;
   }
-
-  .modal-header {
-    padding: 32px 32px 0;
-  }
-  .modal-tag {
-    font-size: 10px;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 8px;
-  }
-  .modal-title {
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    margin-bottom: 28px;
-  }
+  .modal-header { padding: 32px 32px 0; }
+  .modal-tag { font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+  .modal-title { font-size: 20px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 28px; }
   .modal-close {
-    position: absolute;
-    top: 16px; right: 16px;
-    background: none;
-    border: none;
-    font-size: 18px;
-    color: var(--muted);
-    cursor: pointer;
-    width: 32px; height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: color 0.2s;
+    position: absolute; top: 16px; right: 16px;
+    background: none; border: none; font-size: 18px; color: var(--muted);
+    cursor: pointer; width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center; transition: color 0.2s;
   }
   .modal-close:hover { color: var(--black); }
-
   .modal-body { padding: 0 32px 32px; }
-
-  .field {
-    margin-bottom: 16px;
-  }
+  .field { margin-bottom: 16px; }
   .field label {
-    display: block;
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 6px;
+    display: block; font-size: 10px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 6px;
   }
   .field input {
-    width: 100%;
-    background: var(--light);
-    border: 1px solid var(--border);
-    color: var(--black);
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 14px;
-    padding: 11px 14px;
-    outline: none;
-    transition: border-color 0.2s;
-    border-radius: 0;
-    -webkit-appearance: none;
+    width: 100%; background: var(--light); border: 1px solid var(--border);
+    color: var(--black); font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px; padding: 11px 14px; outline: none;
+    transition: border-color 0.2s; border-radius: 0; -webkit-appearance: none;
   }
   .field input:focus { border-color: var(--red); background: var(--white); }
   .field input.error { border-color: #c0392b; }
-
   .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-
-  .modal-success {
-    display: none;
-    padding: 48px 32px;
-    text-align: center;
-  }
+  .modal-success { display: none; padding: 48px 32px; text-align: center; }
   .modal-success.show { display: block; animation: fadeIn 0.3s ease; }
   .success-check {
-    width: 56px; height: 56px;
-    background: var(--red);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-    font-size: 24px;
-    color: var(--white);
+    width: 56px; height: 56px; background: var(--red); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px; font-size: 24px; color: var(--white);
   }
-  .modal-success h4 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-  .modal-success p {
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.6;
-  }
+  .modal-success h4 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+  .modal-success p { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
-  /* FOOTER */
+  /* ─── LIGHTBOX ─── */
+  .lb-overlay {
+    display: none; position: fixed; inset: 0; z-index: 700;
+    background: rgba(10,9,8,0.97); backdrop-filter: blur(10px);
+    align-items: center; justify-content: center; padding: 24px;
+    user-select: none;
+  }
+  .lb-overlay.open { display: flex; animation: fadeIn 0.18s ease; }
+  .lb-inner {
+    position: relative; display: flex; flex-direction: column;
+    align-items: center; max-width: 900px; width: 100%;
+  }
+  .lb-img-wrap {
+    position: relative; display: flex;
+    align-items: center; justify-content: center;
+    width: 100%; min-height: 180px;
+  }
+  .lb-img {
+    max-height: 74vh; max-width: 100%; object-fit: contain; display: block;
+    border: 1px solid rgba(242,244,243,0.07); animation: fadeIn 0.18s ease;
+  }
+  .lb-placeholder {
+    font-size: 100px; line-height: 1; opacity: 0.25;
+    animation: fadeIn 0.18s ease;
+  }
+  .lb-arrow {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 48px; height: 48px;
+    background: rgba(242,244,243,0.07); border: 1px solid rgba(242,244,243,0.14);
+    color: var(--white); font-size: 22px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s; z-index: 2;
+  }
+  .lb-arrow:hover { background: rgba(73,17,28,0.75); border-color: var(--red); }
+  .lb-arrow.prev { left: -64px; }
+  .lb-arrow.next { right: -64px; }
+  .lb-close {
+    position: fixed; top: 18px; right: 18px;
+    width: 40px; height: 40px;
+    background: rgba(242,244,243,0.07); border: 1px solid rgba(242,244,243,0.14);
+    color: var(--white); font-size: 18px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s; z-index: 10;
+  }
+  .lb-close:hover { background: var(--red); border-color: var(--red); }
+  .lb-caption {
+    margin-top: 16px; text-align: center;
+    color: rgba(242,244,243,0.5); font-size: 13px; letter-spacing: 0.04em;
+  }
+  .lb-caption strong { color: var(--white); font-weight: 600; }
+  .lb-counter { margin-top: 6px; font-size: 11px; letter-spacing: 0.2em; color: rgba(242,244,243,0.28); text-transform: uppercase; }
+  .lb-dots { display: flex; gap: 6px; margin-top: 12px; justify-content: center; flex-wrap: wrap; max-width: 320px; }
+  .lb-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgba(242,244,243,0.2); cursor: pointer; transition: background 0.2s;
+    flex-shrink: 0;
+  }
+  .lb-dot.active { background: var(--red); }
+
+  /* ─── FOOTER ─── */
   footer {
-    border-top: 1px solid var(--border);
-    padding: 32px 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: var(--muted);
-    font-size: 12px;
+    border-top: 1px solid var(--border); padding: 32px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    color: var(--muted); font-size: 12px;
   }
-  .footer-logo {
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 0.3em;
-    color: var(--red);
-  }
+  .footer-logo { font-size: 18px; font-weight: 700; letter-spacing: 0.3em; color: var(--red); }
 
-  /* ANIMATIONS */
-  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-  @keyframes slideUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-  /* MOBILE */
+  /* ─── MOBILE ─── */
   @media (max-width: 768px) {
     .header-top { padding: 16px 20px; }
     .logo { font-size: 26px; }
     .header-tagline { display: none; }
-
     .nav-tab { padding: 12px 8px; font-size: 10px; letter-spacing: 0.1em; }
-
     .page-hero { padding: 40px 20px 32px; }
     .master-section { padding: 36px 20px 0; }
+    .master-card { max-width: 100%; }
     .piercing-section { padding: 36px 20px 48px; }
     .tattoo-section { padding: 36px 20px 0; }
-
-    .master-card { max-width: 100%; }
-
     .piercing-grid { grid-template-columns: 1fr 1fr; }
-
-    .consult-block {
-      flex-direction: column;
-      text-align: center;
-      margin: 40px 20px 48px;
-      padding: 40px 24px;
-    }
-
-    .about-section {
-      grid-template-columns: 1fr;
-      padding: 40px 20px 48px;
-      gap: 32px;
-    }
-
+    .consult-block { flex-direction: column; text-align: center; margin: 40px 20px 48px; padding: 40px 24px; }
+    .about-section { grid-template-columns: 1fr; padding: 40px 20px 48px; gap: 32px; }
     .about-stats { gap: 24px; }
     .stat-num { font-size: 36px; }
-
     .map-frame { height: 260px; }
-
-    footer {
-      padding: 24px 20px;
-      flex-direction: column;
-      gap: 8px;
-      text-align: center;
-    }
-
+    footer { padding: 24px 20px; flex-direction: column; gap: 8px; text-align: center; }
     .modal { max-width: 100%; }
     .modal-header { padding: 24px 20px 0; }
     .modal-body { padding: 0 20px 24px; }
     .field-row { grid-template-columns: 1fr; }
+    .lb-arrow.prev { left: -2px; }
+    .lb-arrow.next { right: -2px; }
+    .lb-arrow { width: 36px; height: 36px; font-size: 18px; }
   }
-
   @media (max-width: 480px) {
     .piercing-grid { grid-template-columns: 1fr; }
     .tattoo-grid { grid-template-columns: 1fr 1fr; }
@@ -649,55 +398,51 @@
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="ring"></div>
 
-<!-- HEADER -->
+<!-- ═══ HEADER ═══ -->
 <header>
   <div class="header-top">
     <span class="logo" onclick="showSection('home')">BLD</span>
     <span class="header-tagline">Тату · Пирсинг · Ставрополь</span>
   </div>
   <div class="nav-tabs">
-    <button class="nav-tab active" id="tab-home" onclick="showSection('home')">Главная</button>
-    <button class="nav-tab" id="tab-piercing" onclick="showSection('piercing')">Пирсинг</button>
-    <button class="nav-tab" id="tab-tattoo" onclick="showSection('tattoo')">Тату</button>
-    <button class="nav-tab" id="tab-about" onclick="showSection('about')">О нас</button>
+    <button class="nav-tab active" id="tab-home"     onclick="showSection('home')">Главная</button>
+    <button class="nav-tab"        id="tab-piercing" onclick="showSection('piercing')">Пирсинг</button>
+    <button class="nav-tab"        id="tab-tattoo"   onclick="showSection('tattoo')">Тату</button>
+    <button class="nav-tab"        id="tab-about"    onclick="showSection('about')">О нас</button>
   </div>
 </header>
 
-<!-- HOME -->
+<!-- ═══ HOME ═══ -->
 <div class="section active" id="section-home">
-  <div style="padding: 80px 48px; text-align: center; border-bottom: 1px solid var(--border);">
-    <div style="font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--red); margin-bottom:20px;">Art Studio — Ставрополь</div>
-    <h1 style="font-size: clamp(48px, 8vw, 96px); font-weight:700; letter-spacing:-0.03em; line-height:1; color:var(--black); margin-bottom: 20px;">
-      Искусство<br>на вашей коже
-    </h1>
-    <p style="font-size:16px; color:var(--muted); max-width:480px; margin:0 auto 40px; line-height:1.7;">
+  <div style="padding:80px 48px;text-align:center;border-bottom:1px solid var(--border);">
+    <div style="font-size:10px;letter-spacing:0.4em;text-transform:uppercase;color:var(--red);margin-bottom:20px;">Art Studio — Ставрополь</div>
+    <h1 style="font-size:clamp(48px,8vw,96px);font-weight:700;letter-spacing:-0.03em;line-height:1;margin-bottom:20px;">Искусство<br>на вашей коже</h1>
+    <p style="font-size:16px;color:var(--muted);max-width:480px;margin:0 auto 40px;line-height:1.7;">
       Профессиональная студия тату и пирсинга в центре Ставрополя. Стерильность, качество и индивидуальный подход.
     </p>
-    <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
       <button class="btn btn-primary" onclick="showSection('piercing')">Пирсинг →</button>
       <button class="btn btn-primary" onclick="showSection('tattoo')">Тату →</button>
       <button class="btn" style="background:transparent;color:var(--black);border:1px solid var(--border);" onclick="showSection('about')">О студии</button>
     </div>
   </div>
-
-  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px; background:var(--border); border-bottom:1px solid var(--border);">
-    <div style="background:var(--white); padding:40px; text-align:center; cursor:pointer;" onclick="showSection('piercing')">
-      <div style="font-size:32px; margin-bottom:16px;">◈</div>
-      <div style="font-size:14px; font-weight:600; margin-bottom:6px;">Пирсинг</div>
-      <div style="font-size:12px; color:var(--muted);">Любые виды проколов</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);border-bottom:1px solid var(--border);">
+    <div style="background:var(--white);padding:40px;text-align:center;cursor:pointer;" onclick="showSection('piercing')">
+      <div style="font-size:32px;margin-bottom:16px;">◈</div>
+      <div style="font-size:14px;font-weight:600;margin-bottom:6px;">Пирсинг</div>
+      <div style="font-size:12px;color:var(--muted);">Любые виды проколов</div>
     </div>
-    <div style="background:var(--white); padding:40px; text-align:center; cursor:pointer;" onclick="showSection('tattoo')">
-      <div style="font-size:32px; margin-bottom:16px;">✦</div>
-      <div style="font-size:14px; font-weight:600; margin-bottom:6px;">Тату</div>
-      <div style="font-size:12px; color:var(--muted);">Тату любой сложности</div>
+    <div style="background:var(--white);padding:40px;text-align:center;cursor:pointer;" onclick="showSection('tattoo')">
+      <div style="font-size:32px;margin-bottom:16px;">✦</div>
+      <div style="font-size:14px;font-weight:600;margin-bottom:6px;">Тату</div>
+      <div style="font-size:12px;color:var(--muted);">Тату любой сложности</div>
     </div>
-    <div style="background:var(--white); padding:40px; text-align:center; cursor:pointer;" onclick="showSection('about')">
-      <div style="font-size:32px; margin-bottom:16px;">●</div>
-      <div style="font-size:14px; font-weight:600; margin-bottom:6px;">О студии</div>
-      <div style="font-size:12px; color:var(--muted);">5 лет на рынке</div>
+    <div style="background:var(--white);padding:40px;text-align:center;cursor:pointer;" onclick="showSection('about')">
+      <div style="font-size:32px;margin-bottom:16px;">●</div>
+      <div style="font-size:14px;font-weight:600;margin-bottom:6px;">О студии</div>
+      <div style="font-size:12px;color:var(--muted);">5 лет на рынке</div>
     </div>
   </div>
-
   <footer>
     <div class="footer-logo">BLD</div>
     <div>© 2026 BLD Art Studio</div>
@@ -705,7 +450,7 @@
   </footer>
 </div>
 
-<!-- PIERCING -->
+<!-- ═══ PIERCING ═══ -->
 <div class="section" id="section-piercing">
   <div class="page-hero">
     <div class="page-tag">// Пирсинг</div>
@@ -715,7 +460,10 @@
   <div class="master-section">
     <div class="section-label">Наш специалист</div>
     <div class="master-card">
-      <div class="master-avatar" id="piercing-avatar">А</div>
+      <div class="master-avatar" onclick="openLightbox('piercing-master', 0)" title="Нажми, чтобы увеличить">
+        <img src="images/ALINA.jpg" alt="Алина">
+        
+      </div>
       <div class="master-info">
         <div class="master-name">Алина Соколова</div>
         <div class="master-exp">Стаж: <strong>6 лет</strong></div>
@@ -728,24 +476,33 @@
     <div class="section-label">Виды проколов и цены</div>
     <div class="piercing-grid">
 
+      
+      <!-- Индексы: 0=Мочка, 1=Хеликс, 2=Трагус, 3=Конч, 4=Поперечная, 5=Индастриал,
+           6=Орбитал, 7=ФорвардХеликс, 8=Рук, 9=Снаг, 10=Дэйс, 11=Септум,
+           12=Бровь, 13=ГоризБровь, 14=Язык, 15=УкусАнгела, 16=ВертЛабрет,
+           17=Лабрет, 18=УкусЗмеи, 19=Нострил, 20=Бридж, 21=Пупок,
+           22=Микродермал, 23=Соски -->
+
       <div class="piercing-card">
-        <div class="piercing-img">
-          <img src="images/mochka.jpg" alt="Мочка" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="placeholder-icon" style="display:flex;"></div>
+        <div class="piercing-img" onclick="openLightbox('piercing', 0)">
+          <img src="images/mochka.jpg" alt="Мочка" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-icon" style="display:none;"></div>
+          <div class="zoom-hint">⊕</div>
         </div>
         <div class="piercing-body">
           <div class="piercing-row">
             <div class="piercing-name">Мочка уха</div>
-            <div class="piercing-price">1200 ₽</div>
+            <div class="piercing-price">1 200 ₽</div>
           </div>
           <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Мочка уха')">Записаться</button>
         </div>
       </div>
 
       <div class="piercing-card">
-        <div class="piercing-img">
-          <img src="images/helix.jpg" alt="Хеликс" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="placeholder-icon" style="display:flex;"></div>
+        <div class="piercing-img" onclick="openLightbox('piercing', 1)">
+          <img src="images/helix.jpg" alt="Хеликс" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-icon" style="display:none;"></div>
+          <div class="zoom-hint">⊕</div>
         </div>
         <div class="piercing-body">
           <div class="piercing-row">
@@ -757,9 +514,10 @@
       </div>
 
       <div class="piercing-card">
-        <div class="piercing-img">
-          <img src="images/tragus.jpg" alt="Трагус" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="placeholder-icon" style="display:flex;"></div>
+        <div class="piercing-img" onclick="openLightbox('piercing', 2)">
+          <img src="images/tragus.jpg" alt="Трагус" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-icon" style="display:none;"></div>
+          <div class="zoom-hint">⊕</div>
         </div>
         <div class="piercing-body">
           <div class="piercing-row">
@@ -769,136 +527,147 @@
           <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Трагус')">Записаться</button>
         </div>
       </div>
+
       <div class="piercing-card">
-        <div class="piercing-img">
-          <img src="images/conch.jpg" alt="Конч" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="placeholder-icon" style="display:flex;"></div>
+        <div class="piercing-img" onclick="openLightbox('piercing', 3)">
+          <img src="images/conch.jpg" alt="Конч" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-icon" style="display:none;"></div>
+          <div class="zoom-hint">⊕</div>
         </div>
         <div class="piercing-body">
           <div class="piercing-row">
             <div class="piercing-name">Конч</div>
             <div class="piercing-price">1 900 ₽</div>
           </div>
-          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Трагус')">Записаться</button>
+          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Конч')">Записаться</button>
         </div>
       </div>
-      
+
       <div class="piercing-card">
-        <div class="piercing-img">
-          <img src="images/poperechka.jpg" alt="Поперечная мочка" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="placeholder-icon" style="display:flex;"></div>
+        <div class="piercing-img" onclick="openLightbox('piercing', 4)">
+          <img src="images/poperechka.jpg" alt="Поперечная мочка" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-icon" style="display:none;"></div>
+          <div class="zoom-hint">⊕</div>
         </div>
         <div class="piercing-body">
           <div class="piercing-row">
             <div class="piercing-name">Поперечная мочка</div>
             <div class="piercing-price">1 500 ₽</div>
           </div>
-          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Трагус')">Записаться</button>
+          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Поперечная мочка')">Записаться</button>
         </div>
       </div>
 
       <div class="piercing-card">
-        <div class="piercing-img">
-          <img src="images/indas.jpg" alt="Индастриал" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="placeholder-icon" style="display:flex;"></div>
+        <div class="piercing-img" onclick="openLightbox('piercing', 5)">
+          <img src="images/indas.jpg" alt="Индастриал" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-icon" style="display:none;"></div>
+          <div class="zoom-hint">⊕</div>
         </div>
         <div class="piercing-body">
           <div class="piercing-row">
             <div class="piercing-name">Индастриал</div>
-            <div class="piercing-price">2000 ₽</div>
+            <div class="piercing-price">2 000 ₽</div>
           </div>
-          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Трагус')">Записаться</button>
+          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Индастриал')">Записаться</button>
         </div>
       </div>
 
       <div class="piercing-card">
-        <div class="piercing-img">
-          <img src="images/orbital.jpg" alt="Орбитал" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="placeholder-icon" style="display:flex;"></div>
+        <div class="piercing-img" onclick="openLightbox('piercing', 6)">
+          <img src="images/orbital.jpg" alt="Орбитал" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-icon" style="display:none;"></div>
+          <div class="zoom-hint">⊕</div>
         </div>
         <div class="piercing-body">
           <div class="piercing-row">
             <div class="piercing-name">Орбитал</div>
             <div class="piercing-price">1 900 ₽</div>
           </div>
-          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Трагус')">Записаться</button>
+          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Орбитал')">Записаться</button>
         </div>
       </div>
 
       <div class="piercing-card">
-        <div class="piercing-img">
-          <img src="images/forvard.jpg" alt="Форвард Хеликс" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="placeholder-icon" style="display:flex;"></div>
+        <div class="piercing-img" onclick="openLightbox('piercing', 7)">
+          <img src="images/forvard.jpg" alt="Форвард Хеликс" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-icon" style="display:none;"></div>
+          <div class="zoom-hint">⊕</div>
         </div>
         <div class="piercing-body">
           <div class="piercing-row">
             <div class="piercing-name">Форвард Хеликс</div>
             <div class="piercing-price">1 900 ₽</div>
           </div>
-          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Трагус')">Записаться</button>
+          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Форвард Хеликс')">Записаться</button>
         </div>
       </div>
 
       <div class="piercing-card">
-        <div class="piercing-img">
-          <img src="images/ruk.jpg" alt="Рук" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="placeholder-icon" style="display:flex;"></div>
+        <div class="piercing-img" onclick="openLightbox('piercing', 8)">
+          <img src="images/ruk.jpg" alt="Рук" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-icon" style="display:none;"></div>
+          <div class="zoom-hint">⊕</div>
         </div>
         <div class="piercing-body">
           <div class="piercing-row">
             <div class="piercing-name">Рук</div>
-            <div class="piercing-price">2000 ₽</div>
+            <div class="piercing-price">2 000 ₽</div>
           </div>
-          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Трагус')">Записаться</button>
+          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Рук')">Записаться</button>
         </div>
       </div>
 
       <div class="piercing-card">
-        <div class="piercing-img">
-          <img src="images/snag.jpg" alt="Снаг" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="placeholder-icon" style="display:flex;"></div>
+        <div class="piercing-img" onclick="openLightbox('piercing', 9)">
+          <img src="images/snag.jpg" alt="Снаг" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-icon" style="display:none;"></div>
+          <div class="zoom-hint">⊕</div>
         </div>
         <div class="piercing-body">
           <div class="piercing-row">
             <div class="piercing-name">Снаг</div>
             <div class="piercing-price">1 900 ₽</div>
           </div>
-          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Трагус')">Записаться</button>
+          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Снаг')">Записаться</button>
         </div>
       </div>
 
       <div class="piercing-card">
-        <div class="piercing-img">
-          <img src="images/dase.jpg" alt="Дэйс" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="placeholder-icon" style="display:flex;"></div>
+        <div class="piercing-img" onclick="openLightbox('piercing', 10)">
+          <img src="images/dase.jpg" alt="Дэйс" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-icon" style="display:none;"></div>
+          <div class="zoom-hint">⊕</div>
         </div>
         <div class="piercing-body">
           <div class="piercing-row">
             <div class="piercing-name">Дэйс</div>
             <div class="piercing-price">1 900 ₽</div>
           </div>
-          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Трагус')">Записаться</button>
+          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Дэйс')">Записаться</button>
         </div>
       </div>
 
       <div class="piercing-card">
-        <div class="piercing-img">
-          <img src="images/septum.jpg" alt="Септум" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="placeholder-icon" style="display:flex;"></div>
+        <div class="piercing-img" onclick="openLightbox('piercing', 11)">
+          <img src="images/septum.jpg" alt="Септум" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-icon" style="display:none;"></div>
+          <div class="zoom-hint">⊕</div>
         </div>
         <div class="piercing-body">
           <div class="piercing-row">
             <div class="piercing-name">Септум</div>
-            <div class="piercing-price"> 1 800 ₽</div>
+            <div class="piercing-price">1 800 ₽</div>
           </div>
           <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Септум')">Записаться</button>
         </div>
       </div>
 
       <div class="piercing-card">
-        <div class="piercing-img">
-          <img src="images/brov.jpg" alt="Бровь" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="placeholder-icon" style="display:flex;"></div>
+        <div class="piercing-img" onclick="openLightbox('piercing', 12)">
+          <img src="images/brov.jpg" alt="Бровь" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-icon" style="display:none;"></div>
+          <div class="zoom-hint">⊕</div>
         </div>
         <div class="piercing-body">
           <div class="piercing-row">
@@ -910,121 +679,130 @@
       </div>
 
       <div class="piercing-card">
-        <div class="piercing-img">
-          <img src="images/gorizbrov.jpg" alt="Горизонтальная бровь" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="placeholder-icon" style="display:flex;"></div>
+        <div class="piercing-img" onclick="openLightbox('piercing', 13)">
+          <img src="images/gorizbrov.jpg" alt="Горизонтальная бровь" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-icon" style="display:none;"></div>
+          <div class="zoom-hint">⊕</div>
         </div>
         <div class="piercing-body">
           <div class="piercing-row">
-            <div class="piercing-name">Горизонтальная Бровь</div>
+            <div class="piercing-name">Горизонтальная бровь</div>
             <div class="piercing-price">1 900 ₽</div>
           </div>
-          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Бровь')">Записаться</button>
+          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Горизонтальная бровь')">Записаться</button>
         </div>
       </div>
 
       <div class="piercing-card">
-        <div class="piercing-img">
-          <img src="images/yaz.jpg" alt="Язык" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="placeholder-icon" style="display:flex;"></div>
+        <div class="piercing-img" onclick="openLightbox('piercing', 14)">
+          <img src="images/yaz.jpg" alt="Язык" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-icon" style="display:none;"></div>
+          <div class="zoom-hint">⊕</div>
         </div>
         <div class="piercing-body">
           <div class="piercing-row">
             <div class="piercing-name">Язык</div>
             <div class="piercing-price">1 800 ₽</div>
           </div>
-          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Бровь')">Записаться</button>
+          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Язык')">Записаться</button>
         </div>
       </div>
 
       <div class="piercing-card">
-        <div class="piercing-img">
-          <img src="images/angel.jpg" alt="Укус Ангела" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="placeholder-icon" style="display:flex;"></div>
+        <div class="piercing-img" onclick="openLightbox('piercing', 15)">
+          <img src="images/angel.jpg" alt="Укус Ангела" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-icon" style="display:none;"></div>
+          <div class="zoom-hint">⊕</div>
         </div>
         <div class="piercing-body">
           <div class="piercing-row">
             <div class="piercing-name">Укус Ангела</div>
             <div class="piercing-price">2 800 ₽</div>
           </div>
-          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Бровь')">Записаться</button>
+          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Укус Ангела')">Записаться</button>
         </div>
       </div>
 
       <div class="piercing-card">
-        <div class="piercing-img">
-          <img src="images/vertlab.jpg" alt="Вертикальный Лабрет" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="placeholder-icon" style="display:flex;"></div>
+        <div class="piercing-img" onclick="openLightbox('piercing', 16)">
+          <img src="images/vertlab.jpg" alt="Вертикальный Лабрет" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-icon" style="display:none;"></div>
+          <div class="zoom-hint">⊕</div>
         </div>
         <div class="piercing-body">
           <div class="piercing-row">
             <div class="piercing-name">Вертикальный Лабрет</div>
             <div class="piercing-price">1 800 ₽</div>
           </div>
-          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Бровь')">Записаться</button>
+          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Вертикальный Лабрет')">Записаться</button>
         </div>
       </div>
 
       <div class="piercing-card">
-        <div class="piercing-img">
-          <img src="images/labret.jpg" alt="Лабрет" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="placeholder-icon" style="display:flex;"></div>
+        <div class="piercing-img" onclick="openLightbox('piercing', 17)">
+          <img src="images/labret.jpg" alt="Лабрет" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-icon" style="display:none;"></div>
+          <div class="zoom-hint">⊕</div>
         </div>
         <div class="piercing-body">
           <div class="piercing-row">
             <div class="piercing-name">Лабрет</div>
             <div class="piercing-price">1 800 ₽</div>
           </div>
-          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Бровь')">Записаться</button>
+          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Лабрет')">Записаться</button>
         </div>
       </div>
 
       <div class="piercing-card">
-        <div class="piercing-img">
-          <img src="images/snake.jpg" alt="Укус Змеи" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="placeholder-icon" style="display:flex;"></div>
+        <div class="piercing-img" onclick="openLightbox('piercing', 18)">
+          <img src="images/snake.jpg" alt="Укус Змеи" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-icon" style="display:none;"></div>
+          <div class="zoom-hint">⊕</div>
         </div>
         <div class="piercing-body">
           <div class="piercing-row">
-            <div class="piercing-name">Укус змеи</div>
+            <div class="piercing-name">Укус Змеи</div>
             <div class="piercing-price">2 800 ₽</div>
           </div>
-          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Бровь')">Записаться</button>
+          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Укус Змеи')">Записаться</button>
         </div>
       </div>
 
       <div class="piercing-card">
-        <div class="piercing-img">
-          <img src="images/nostril2.jpg" alt="Нострил" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="placeholder-icon" style="display:flex;"></div>
+        <div class="piercing-img" onclick="openLightbox('piercing', 19)">
+          <img src="images/nostril2.jpg" alt="Нострил" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-icon" style="display:none;"></div>
+          <div class="zoom-hint">⊕</div>
         </div>
         <div class="piercing-body">
           <div class="piercing-row">
             <div class="piercing-name">Нострил</div>
             <div class="piercing-price">1 800 ₽</div>
           </div>
-          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Бровь')">Записаться</button>
+          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Нострил')">Записаться</button>
         </div>
       </div>
 
       <div class="piercing-card">
-        <div class="piercing-img">
-          <img src="images/brige2.jpg" alt="Бридж" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="placeholder-icon" style="display:flex;"></div>
+        <div class="piercing-img" onclick="openLightbox('piercing', 20)">
+          <img src="images/brige2.jpg" alt="Бридж" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-icon" style="display:none;"></div>
+          <div class="zoom-hint">⊕</div>
         </div>
         <div class="piercing-body">
           <div class="piercing-row">
             <div class="piercing-name">Бридж</div>
             <div class="piercing-price">1 800 ₽</div>
           </div>
-          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Бровь')">Записаться</button>
+          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Бридж')">Записаться</button>
         </div>
       </div>
 
       <div class="piercing-card">
-        <div class="piercing-img">
-          <img src="images/pup.jpg" alt="Пупок" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="placeholder-icon" style="display:flex;"></div>
+        <div class="piercing-img" onclick="openLightbox('piercing', 21)">
+          <img src="images/pup.jpg" alt="Пупок" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-icon" style="display:none;"></div>
+          <div class="zoom-hint">⊕</div>
         </div>
         <div class="piercing-body">
           <div class="piercing-row">
@@ -1036,32 +814,35 @@
       </div>
 
       <div class="piercing-card">
-        <div class="piercing-img">
-          <img src="images/micro.jpg" alt="Микродермал" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="placeholder-icon" style="display:flex;"></div>
+        <div class="piercing-img" onclick="openLightbox('piercing', 22)">
+          <img src="images/micro.jpg" alt="Микродермал" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-icon" style="display:none;"></div>
+          <div class="zoom-hint">⊕</div>
         </div>
         <div class="piercing-body">
           <div class="piercing-row">
             <div class="piercing-name">Микродермал</div>
             <div class="piercing-price">4 000 ₽</div>
           </div>
-          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Бровь')">Записаться</button>
+          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Микродермал')">Записаться</button>
         </div>
       </div>
 
       <div class="piercing-card">
-        <div class="piercing-img">
-          <img src="images/soski.jpg" alt="Сосок/Соски" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="placeholder-icon" style="display:flex;"></div>
+        <div class="piercing-img" onclick="openLightbox('piercing', 23)">
+          <img src="images/soski.jpg" alt="Соски" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-icon" style="display:none;"></div>
+          <div class="zoom-hint">⊕</div>
         </div>
         <div class="piercing-body">
           <div class="piercing-row">
             <div class="piercing-name">Соски</div>
-            <div class="piercing-price">1 800/2 800 ₽</div>
+            <div class="piercing-price">1 800 / 2 800 ₽</div>
           </div>
-          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Бровь')">Записаться</button>
+          <button class="btn btn-primary btn-sm btn-full" onclick="openModal('piercing','Соски')">Записаться</button>
         </div>
       </div>
+
     </div>
   </div>
 
@@ -1072,7 +853,7 @@
   </footer>
 </div>
 
-<!-- TATTOO -->
+<!-- ═══ TATTOO ═══ -->
 <div class="section" id="section-tattoo">
   <div class="page-hero">
     <div class="page-tag">// Тату</div>
@@ -1082,9 +863,12 @@
   <div class="master-section">
     <div class="section-label">Наш специалист</div>
     <div class="master-card">
-      <div class="master-avatar" id="tattoo-avatar" >О </div>
+      <div class="master-avatar" onclick="openLightbox('tattoo-master', 0)" title="Нажми, чтобы увеличить">
+         <img src="images/OLEG.jpg" alt="Олег"> 
+        
+      </div>
       <div class="master-info">
-        <div class="master-name">Олег Бекетов</div> 
+        <div class="master-name">Олег Бекетов</div>
         <div class="master-exp">Стаж: <strong>7 лет</strong></div>
         <div class="master-exp" style="margin-top:4px;">Тату любой сложности</div>
       </div>
@@ -1094,22 +878,24 @@
   <div class="tattoo-section">
     <div class="section-label">Портфолио</div>
     <div class="tattoo-grid">
-      <div class="tattoo-item"><img src="images/tat1.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div></div>
-      <div class="tattoo-item"><img src="images/tat2.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div></div>
-      <div class="tattoo-item"><img src="images/tat3.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div></div>
-      <div class="tattoo-item"><img src="images/tat4.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div></div>
-      <div class="tattoo-item"><img src="images/tat5.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div></div>
-      <div class="tattoo-item"><img src="images/tat6.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div></div>
-      <div class="tattoo-item"><img src="images/tat7.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div></div>
-      <div class="tattoo-item"><img src="images/tat8.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div></div>
-      <div class="tattoo-item"><img src="images/tat9.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div></div>
-      <div class="tattoo-item"><img src="images/tat10.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div></div>
-      <div class="tattoo-item"><img src="images/tat11.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div></div>
-      <div class="tattoo-item"><img src="images/tat12.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div></div>  
-      <div class="tattoo-item"><img src="images/tat13.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div></div>
-      <div class="tattoo-item"><img src="images/tat14.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div></div>
-      <div class="tattoo-item"><img src="images/tat15.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div></div>
-      <div class="tattoo-item"><img src="images/tat16.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div></div>          
+      <!-- Каждый .tattoo-item кликабелен — открывает лайтбокс -->
+      <div class="tattoo-item" onclick="openLightbox('tattoo',0)"><img src="images/tat1.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div><div class="zoom-hint">⊕</div></div>
+      <div class="tattoo-item" onclick="openLightbox('tattoo',1)"><img src="images/tat2.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div><div class="zoom-hint">⊕</div></div>
+      <div class="tattoo-item" onclick="openLightbox('tattoo',2)"><img src="images/tat3.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div><div class="zoom-hint">⊕</div></div>
+      <div class="tattoo-item" onclick="openLightbox('tattoo',3)"><img src="images/tat4.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div><div class="zoom-hint">⊕</div></div>
+      <div class="tattoo-item" onclick="openLightbox('tattoo',4)"><img src="images/tat5.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div><div class="zoom-hint">⊕</div></div>
+      <div class="tattoo-item" onclick="openLightbox('tattoo',5)"><img src="images/tat6.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div><div class="zoom-hint">⊕</div></div>
+      <div class="tattoo-item" onclick="openLightbox('tattoo',6)"><img src="images/tat7.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div><div class="zoom-hint">⊕</div></div>
+      <div class="tattoo-item" onclick="openLightbox('tattoo',7)"><img src="images/tat8.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div><div class="zoom-hint">⊕</div></div>
+      <div class="tattoo-item" onclick="openLightbox('tattoo',8)"><img src="images/tat9.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div><div class="zoom-hint">⊕</div></div>
+      <div class="tattoo-item" onclick="openLightbox('tattoo',9)"><img src="images/tat10.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div><div class="zoom-hint">⊕</div></div>
+      <div class="tattoo-item" onclick="openLightbox('tattoo',10)"><img src="images/tat11.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div><div class="zoom-hint">⊕</div></div>
+      <div class="tattoo-item" onclick="openLightbox('tattoo',11)"><img src="images/tat12.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div><div class="zoom-hint">⊕</div></div>
+      <div class="tattoo-item" onclick="openLightbox('tattoo',12)"><img src="images/tat13.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div><div class="zoom-hint">⊕</div></div>
+      <div class="tattoo-item" onclick="openLightbox('tattoo',13)"><img src="images/tat14.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div><div class="zoom-hint">⊕</div></div>
+      <div class="tattoo-item" onclick="openLightbox('tattoo',14)"><img src="images/tat15.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div><div class="zoom-hint">⊕</div></div>
+      <div class="tattoo-item" onclick="openLightbox('tattoo',15)"><img src="images/tat16.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div><div class="zoom-hint">⊕</div></div>
+      <div class="tattoo-item" onclick="openLightbox('tattoo',16)"><img src="images/tat17.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder-icon" style="display:none;"></div><div class="zoom-hint">⊕</div></div>
     </div>
   </div>
 
@@ -1128,13 +914,12 @@
   </footer>
 </div>
 
-<!-- ABOUT -->
+<!-- ═══ ABOUT ═══ -->
 <div class="section" id="section-about">
   <div class="page-hero">
     <div class="page-tag">// О нас</div>
     <h1 class="page-title">Студия BLD</h1>
   </div>
-
   <div class="about-section">
     <div class="about-desc">
       <h2>Мы создаём искусство,<br>которое остаётся с вами</h2>
@@ -1142,40 +927,26 @@
       <p>Стерильность, качество материалов и индивидуальный подход — это основа того, как мы работаем каждый день. Только сертифицированные украшения. Только одноразовые инструменты.</p>
       <p>Студия основана в 2019 году и за это время стала любимым местом для более 2000 клиентов.</p>
       <div class="about-stats">
-        <div>
-          <div class="stat-num">5</div>
-          <div class="stat-label">Лет работы</div>
-        </div>
-        <div>
-          <div class="stat-num">2</div>
-          <div class="stat-label">Мастера</div>
-        </div>
-        <div>
-          <div class="stat-num">2K+</div>
-          <div class="stat-label">Клиентов</div>
-        </div>
+        <div><div class="stat-num">5</div><div class="stat-label">Лет работы</div></div>
+        <div><div class="stat-num">2</div><div class="stat-label">Мастера</div></div>
+        <div><div class="stat-num">2K+</div><div class="stat-label">Клиентов</div></div>
       </div>
     </div>
-
     <div class="about-map-col">
       <h3>Мы на карте</h3>
       <div class="map-frame">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2237.6544487470487!2d41.98210487143651!3d45.039780365797746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40f9008d53351049%3A0x13f6a64443cd9413!2z0YPQuy4g0KDQvtC30Ysg0JvRjtC60YHQtdC80LHRg9GA0LMsIDU5LCDQodGC0LDQstGA0L7Qv9C-0LvRjCwg0KHRgtCw0LLRgNC-0L_QvtC70YzRgdC60LjQuSDQutGA0LDQuSwgMzU1MDM1!5e0!3m2!1sru!2sru!4v1776809995050!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2237.6544487470487!2d41.98210487143651!3d45.039780365797746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40f9008d53351049%3A0x13f6a64443cd9413!2z0YPQuy4g0KDQvtC30Ysg0JvRjtC60YHQtdC80LHRg9GA0LMsIDU5LCDQodGC0LDQstGA0L7Qv9C-0LvRjCwg0KHRgtCw0LLRgNC-0L_QvtC70YzRgdC60LjQuSDQutGA0LDQuSwgMzU1MDM1!5e0!3m2!1sru!2sru!4v1776809995050!5m2!1sru!2sru" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       <div class="address-block">
-        <strong>BLD Art Studio</strong>
-        Ставрополь, ул. Розы Люксембург, 59<br>
-        <br>
+        <strong>BLD Art Studio</strong><br>
+        Ставрополь, ул. Розы Люксембург, 59<br><br>
         <strong>Режим работы:</strong><br>
         Пн–Сб: 11:00 — 21:00<br>
-        Вс: 12:00 — 19:00<br>
-        <br>
+        Вс: 12:00 — 19:00<br><br>
         <strong>Телефон:</strong> +7 (999) 000-00-00
       </div>
     </div>
   </div>
-
   <footer>
     <div class="footer-logo">BLD</div>
     <div>© 2026 BLD Art Studio</div>
@@ -1183,7 +954,7 @@
   </footer>
 </div>
 
-<!-- MODAL -->
+<!-- ═══ BOOKING MODAL ═══ -->
 <div class="modal-overlay" id="modal">
   <div class="modal">
     <button class="modal-close" onclick="closeModal()">✕</button>
@@ -1195,11 +966,11 @@
       <div class="modal-body">
         <div class="field">
           <label>Имя *</label>
-          <input type="text" id="fName" placeholder="Ваше имя">
+          <input type="text" id="fName" placeholder="Ваше имя" autocomplete="name">
         </div>
         <div class="field">
           <label>Телефон *</label>
-          <input type="tel" id="fPhone" placeholder="+7 (___) ___-__-__">
+          <input type="tel" id="fPhone" placeholder="+7 (___) ___-__-__" autocomplete="tel">
         </div>
         <div class="field">
           <label>Соцсеть для связи *</label>
@@ -1230,101 +1001,274 @@
   </div>
 </div>
 
+<!-- ═══ LIGHTBOX ═══ -->
+<div class="lb-overlay" id="lightbox">
+  <button class="lb-close" onclick="closeLightbox()">✕</button>
+  <div class="lb-inner">
+    <div class="lb-img-wrap">
+      <button class="lb-arrow prev" id="lbPrev" onclick="lbStep(-1)">‹</button>
+      <div id="lbContent"></div>
+      <button class="lb-arrow next" id="lbNext" onclick="lbStep(1)">›</button>
+    </div>
+    <div class="lb-caption" id="lbCaption"></div>
+    <div class="lb-counter" id="lbCounter"></div>
+    <div class="lb-dots"    id="lbDots"></div>
+  </div>
+</div>
+
 <script>
-  // CURSOR
-  const cur = document.getElementById('cursor');
-  const rng = document.getElementById('ring');
-  let mx=0,my=0,rx=0,ry=0;
-  document.addEventListener('mousemove', e => {
-    mx=e.clientX; my=e.clientY;
-    cur.style.left=mx+'px'; cur.style.top=my+'px';
+// ─── CURSOR ───────────────────────────────────────────────────────────────────
+const cur = document.getElementById('cursor');
+const rng = document.getElementById('ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove', e => {
+  mx=e.clientX; my=e.clientY;
+  cur.style.left=mx+'px'; cur.style.top=my+'px';
+});
+(function tick(){
+  rx+=(mx-rx)*0.12; ry+=(my-ry)*0.12;
+  rng.style.left=rx+'px'; rng.style.top=ry+'px';
+  requestAnimationFrame(tick);
+})();
+document.querySelectorAll('a,button,.master-avatar,.piercing-img,.tattoo-item').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{
+    cur.style.transform='translate(-50%,-50%) scale(2.2)';
+    rng.style.transform='translate(-50%,-50%) scale(1.6)';
+    rng.style.borderColor='rgba(73,17,28,0.8)';
   });
-  (function tick(){
-    rx+=(mx-rx)*0.12; ry+=(my-ry)*0.12;
-    rng.style.left=rx+'px'; rng.style.top=ry+'px';
-    requestAnimationFrame(tick);
-  })();
-  document.querySelectorAll('a,button').forEach(el=>{
-    el.addEventListener('mouseenter',()=>{
-      cur.style.transform='translate(-50%,-50%) scale(2.2)';
-      rng.style.transform='translate(-50%,-50%) scale(1.6)';
-      rng.style.borderColor='rgba(73,17,28,0.8)';
-    });
-    el.addEventListener('mouseleave',()=>{
-      cur.style.transform='translate(-50%,-50%) scale(1)';
-      rng.style.transform='translate(-50%,-50%) scale(1)';
-      rng.style.borderColor='rgba(73,17,28,0.4)';
-    });
+  el.addEventListener('mouseleave',()=>{
+    cur.style.transform='translate(-50%,-50%) scale(1)';
+    rng.style.transform='translate(-50%,-50%) scale(1)';
+    rng.style.borderColor='rgba(73,17,28,0.4)';
   });
+});
 
-  // NAVIGATION
-  function showSection(id) {
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-    document.getElementById('section-' + id).classList.add('active');
-    document.getElementById('tab-' + id).classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+// ─── NAVIGATION ───────────────────────────────────────────────────────────────
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('section-' + id).classList.add('active');
+  document.getElementById('tab-' + id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
-  // MODAL
-  let curType = '';
-  function openModal(type, service) {
-    curType = type;
-    document.getElementById('mForm').style.display = 'block';
-    document.getElementById('mSuccess').classList.remove('show');
-    document.getElementById('mTag').textContent = type === 'piercing' ? '// Запись на пирсинг' : '// Консультация по тату';
-    document.getElementById('mTitle').textContent = type === 'piercing' ? 'Запись: ' + service : 'Запись на консультацию';
-    document.getElementById('dateRow').style.display = type === 'piercing' ? 'block' : 'none';
-    ['fName','fPhone','fSocial','fDate','fTime'].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) { el.value = ''; el.classList.remove('error'); }
+// ─── LIGHTBOX DATA ────────────────────────────────────────────────────────────
+const galleries = {
+
+  'piercing-master': [
+    { src: 'images/ALINA.jpg', name: 'Алина Соколова', sub: 'Мастер пирсинга · стаж 6 лет' },
+  ],
+
+  'piercing': [
+    { src: 'images/mochka.jpg',    name: 'Мочка уха' },
+    { src: 'images/helix.jpg',     name: 'Хеликс' },
+    { src: 'images/tragus.jpg',    name: 'Трагус' },
+    { src: 'images/conch.jpg',     name: 'Конч' },
+    { src: 'images/poperechka.jpg',name: 'Поперечная мочка' },
+    { src: 'images/indas.jpg',     name: 'Индастриал' },
+    { src: 'images/orbital.jpg',   name: 'Орбитал' },
+    { src: 'images/forvard.jpg',   name: 'Форвард Хеликс' },
+    { src: 'images/ruk.jpg',       name: 'Рук' },
+    { src: 'images/snag.jpg',      name: 'Снаг' },
+    { src: 'images/dase.jpg',      name: 'Дэйс' },
+    { src: 'images/septum.jpg',    name: 'Септум' },
+    { src: 'images/brov.jpg',      name: 'Бровь' },
+    { src: 'images/gorizbrov.jpg', name: 'Горизонтальная бровь' },
+    { src: 'images/yaz.jpg',       name: 'Язык' },
+    { src: 'images/angel.jpg',     name: 'Укус Ангела' },
+    { src: 'images/vertlab.jpg',   name: 'Вертикальный Лабрет' },
+    { src: 'images/labret.jpg',    name: 'Лабрет' },
+    { src: 'images/snake.jpg',     name: 'Укус Змеи' },
+    { src: 'images/nostril2.jpg',  name: 'Нострил' },
+    { src: 'images/brige2.jpg',    name: 'Бридж' },
+    { src: 'images/pup.jpg',       name: 'Пупок' },
+    { src: 'images/micro.jpg',     name: 'Микродермал' },
+    { src: 'images/soski.jpg',     name: 'Соски' },
+  ],
+
+  'tattoo-master': [
+    { src: 'images/OLEG.jpg', name: 'Олег Бекетов', sub: 'Тату мастер · стаж 7 лет' },
+  ],
+
+  'tattoo': [
+    { src: 'images/tat1.jpg',  name: 'Работа 1',  sub: 'Олег Бекетов' },
+    { src: 'images/tat2.jpg',  name: 'Работа 2',  sub: 'Олег Бекетов' },
+    { src: 'images/tat3.jpg',  name: 'Работа 3',  sub: 'Олег Бекетов' },
+    { src: 'images/tat4.jpg',  name: 'Работа 4',  sub: 'Олег Бекетов' },
+    { src: 'images/tat5.jpg',  name: 'Работа 5',  sub: 'Олег Бекетов' },
+    { src: 'images/tat6.jpg',  name: 'Работа 6',  sub: 'Олег Бекетов' },
+    { src: 'images/tat7.jpg',  name: 'Работа 7',  sub: 'Олег Бекетов' },
+    { src: 'images/tat8.jpg',  name: 'Работа 8',  sub: 'Олег Бекетов' },
+    { src: 'images/tat9.jpg',  name: 'Работа 9',  sub: 'Олег Бекетов' },
+    { src: 'images/tat10.jpg', name: 'Работа 10', sub: 'Олег Бекетов' },
+    { src: 'images/tat11.jpg', name: 'Работа 11', sub: 'Олег Бекетов' },
+    { src: 'images/tat12.jpg', name: 'Работа 12', sub: 'Олег Бекетов' },
+    { src: 'images/tat13.jpg', name: 'Работа 13', sub: 'Олег Бекетов' },
+    { src: 'images/tat14.jpg', name: 'Работа 14', sub: 'Олег Бекетов' },
+    { src: 'images/tat15.jpg', name: 'Работа 15', sub: 'Олег Бекетов' },
+    { src: 'images/tat16.jpg', name: 'Работа 16', sub: 'Олег Бекетов' },
+    { src: 'images/tat17.jpg', name: 'Работа 17', sub: 'Олег Бекетов' },
+  ],
+};
+
+// ─── LIGHTBOX LOGIC ───────────────────────────────────────────────────────────
+let lbGallery = [], lbIdx = 0;
+
+function openLightbox(galleryId, startIdx) {
+  lbGallery = galleries[galleryId] || [];
+  if (!lbGallery.length) return;
+  lbIdx = startIdx;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  renderLb();
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function lbStep(dir) {
+  lbIdx = (lbIdx + dir + lbGallery.length) % lbGallery.length;
+  renderLb();
+}
+
+function lbGoTo(i) { lbIdx = i; renderLb(); }
+
+function renderLb() {
+  const item   = lbGallery[lbIdx];
+  const multi  = lbGallery.length > 1;
+  const content = document.getElementById('lbContent');
+  document.getElementById('lbPrev').style.display = multi ? '' : 'none';
+  document.getElementById('lbNext').style.display = multi ? '' : 'none';
+
+
+  const img = new Image();
+  img.className = 'lb-img';
+  img.alt = item.name || '';
+  img.onload = () => { content.innerHTML = ''; content.appendChild(img); };
+  img.onerror = () => { content.innerHTML = `<div class="lb-placeholder">🖼</div>`; };
+  img.src = item.src;
+
+  content.innerHTML = `<div class="lb-placeholder" style="font-size:48px;opacity:0.15;">⌛</div>`;
+
+  if (img.complete && img.naturalWidth) { content.innerHTML = ''; content.appendChild(img); }
+
+  document.getElementById('lbCaption').innerHTML =
+    item.name ? `<strong>${item.name}</strong>${item.sub ? ' — ' + item.sub : ''}` : '';
+  document.getElementById('lbCounter').textContent =
+    multi ? `${lbIdx + 1} / ${lbGallery.length}` : '';
+
+  // Dots
+  const dots = document.getElementById('lbDots');
+  dots.innerHTML = '';
+  if (multi && lbGallery.length <= 24) {
+    lbGallery.forEach((_, i) => {
+      const d = document.createElement('div');
+      d.className = 'lb-dot' + (i === lbIdx ? ' active' : '');
+      d.onclick = () => lbGoTo(i);
+      dots.appendChild(d);
     });
-    document.getElementById('modal').classList.add('open');
   }
+}
 
-  function closeModal() {
-    document.getElementById('modal').classList.remove('open');
+// Клик по фону — закрыть
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target === document.getElementById('lightbox') ||
+      e.target === document.getElementById('lbContent') ||
+      e.target.classList.contains('lb-inner')) {
+    closeLightbox();
   }
+});
 
-  document.getElementById('modal').addEventListener('click', e => {
-    if (e.target === document.getElementById('modal')) closeModal();
+// Клавиатура
+document.addEventListener('keydown', e => {
+  const lb = document.getElementById('lightbox');
+  if (lb.classList.contains('open')) {
+    if (e.key === 'ArrowLeft')  lbStep(-1);
+    if (e.key === 'ArrowRight') lbStep(1);
+    if (e.key === 'Escape')     closeLightbox();
+    return;
+  }
+  if (e.key === 'Escape') closeModal();
+});
+
+// Свайп на телефоне
+let lbTouchX = null;
+document.getElementById('lightbox').addEventListener('touchstart', e => {
+  lbTouchX = e.touches[0].clientX;
+}, { passive: true });
+document.getElementById('lightbox').addEventListener('touchend', e => {
+  if (lbTouchX === null) return;
+  const dx = e.changedTouches[0].clientX - lbTouchX;
+  if (Math.abs(dx) > 40) lbStep(dx < 0 ? 1 : -1);
+  lbTouchX = null;
+});
+
+// ─── BOOKING MODAL ────────────────────────────────────────────────────────────
+let curType = '';
+
+function openModal(type, service) {
+  curType = type;
+  document.getElementById('mForm').style.display = 'block';
+  document.getElementById('mSuccess').classList.remove('show');
+  document.getElementById('mTag').textContent   = type === 'piercing' ? '// Запись на пирсинг' : '// Консультация по тату';
+  document.getElementById('mTitle').textContent = type === 'piercing' ? 'Запись: ' + service : 'Запись на консультацию';
+  document.getElementById('dateRow').style.display = type === 'piercing' ? 'block' : 'none';
+  ['fName','fPhone','fSocial','fDate','fTime'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.value = ''; el.classList.remove('error'); }
   });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
 
-  async function submitForm() {
-    const name = document.getElementById('fName').value.trim();
-    const phone = document.getElementById('fPhone').value.trim();
-    const social = document.getElementById('fSocial').value.trim();
-    let ok = true;
-    [['fName', name], ['fPhone', phone], ['fSocial', social]].forEach(([id, val]) => {
-      const el = document.getElementById(id);
-      if (!val) { el.classList.add('error'); ok = false; }
-      else el.classList.remove('error');
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('modal').addEventListener('click', e => {
+  if (e.target === document.getElementById('modal')) closeModal();
+});
+
+async function submitForm() {
+  const name   = document.getElementById('fName').value.trim();
+  const phone  = document.getElementById('fPhone').value.trim();
+  const social = document.getElementById('fSocial').value.trim();
+  let ok = true;
+  [['fName',name],['fPhone',phone],['fSocial',social]].forEach(([id,val]) => {
+    const el = document.getElementById(id);
+    if (!val) { el.classList.add('error'); ok = false; }
+    else el.classList.remove('error');
+  });
+  if (!ok) return;
+
+  const payload = {
+    type:    curType,
+    name,    phone,  social,
+    service: document.getElementById('mTitle').textContent,
+    date:    document.getElementById('fDate')?.value || null,
+    time:    document.getElementById('fTime')?.value || null,
+  };
+
+  // ─── Отправка на бэкенд ───────────────────────────────────────────────────
+  const API = 'https://bld-xh0h.onrender.com';
+  // ─────────────────────────────────────────────────────────────────────────
+  try {
+    await fetch(API + '/api/booking', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify(payload),
     });
-    if (!ok) return;
-
-    const payload = {
-      type: curType,
-      name, phone, social,
-      service: document.getElementById('mTitle').textContent,
-      date: document.getElementById('fDate')?.value || null,
-      time: document.getElementById('fTime')?.value || null,
-    };
-
-    // Отправка на бэкенд (раскомментировать после деплоя)
-    // try {
-    //   await fetch('http://localhost:3000/api/booking', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify(payload)
-    //   });
-    // } catch(e) { console.error(e); }
-
-    console.log('Booking:', payload);
-    document.getElementById('mForm').style.display = 'none';
-    document.getElementById('mSuccess').classList.add('show');
-    setTimeout(closeModal, 3500);
+  } catch (e) {
+    console.warn('Backend unavailable:', e);
   }
+
+  document.getElementById('mForm').style.display = 'none';
+  document.getElementById('mSuccess').classList.add('show');
+  setTimeout(closeModal, 3500);
+}
 </script>
 </body>
 </html>
